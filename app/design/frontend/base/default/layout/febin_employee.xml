@@ -1,0 +1,64 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Febin_Employee extension
+ * 
+ * NOTICE OF LICENSE
+ * 
+ * This source file is subject to the MIT License
+ * that is bundled with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://opensource.org/licenses/mit-license.php
+ * 
+ * @category       Febin
+ * @package        Febin_Employee
+ * @copyright      Copyright (c) 2015
+ * @license        http://opensource.org/licenses/mit-license.php MIT License
+ */
+-->
+<layout>
+    
+    <customer_account>
+        <reference name="customer_account_navigation">
+            <action method="addLink" translate="label" module="febin_employee"><name>blog_comments</name><path>febin_employee/blog_customer_comment</path><label>blog Comments</label></action>
+        </reference>
+    </customer_account>
+    <febin_employee_employee_index translate="label" module="febin_employee">
+        <label>Employee list</label>
+        <update handle="page_two_columns_left" />
+        <reference name="content">
+            <block type="febin_employee/employee_list" name="employee_list" template="febin_employee/employee/list.phtml" />
+        </reference>
+    </febin_employee_employee_index>
+    <febin_employee_blog_index translate="label" module="febin_employee">
+        <label>Blog list</label>
+        <update handle="page_two_columns_left" />
+        <reference name="content">
+            <block type="febin_employee/blog_list" name="blog_list" template="febin_employee/blog/list.phtml" />
+        </reference>
+    </febin_employee_blog_index>
+    <febin_employee_blog_view translate="label" module="febin_employee">
+        <label>Blog view page</label>
+        <update handle="page_two_columns_left" />
+        <reference name="content">
+            <block type="febin_employee/blog_view" name="blog_view" template="febin_employee/blog/view.phtml" />
+            <block type="febin_employee/blog_comment_list" name="blog.comments_list" as="blog_comment_list" template="febin_employee/blog/comment/list.phtml">
+                <block type="febin_employee/blog_comment_form" name="comment_form" as="comment_form" template="febin_employee/blog/comment/form.phtml" />
+            </block>
+        </reference>
+    </febin_employee_blog_view>
+    <febin_employee_blog_customer_comment_index translate="label" module="febin_employee">
+        <label>My Blog comments</label>
+        <update handle="customer_account"/>
+        <reference name="my.account.wrapper">
+            <block type="febin_employee/blog_customer_comment_list" name="customer_blog_comments" template="febin_employee/blog/customer/comment/list.phtml"/>
+        </reference>
+    </febin_employee_blog_customer_comment_index>
+    <febin_employee_blog_customer_comment_view translate="label" module="febin_employee">
+        <label>My Blog comment view</label>
+        <update handle="customer_account"/>
+        <reference name="my.account.wrapper">
+            <block type="febin_employee/blog_customer_comment_view" name="customer_blog_comment" template="febin_employee/blog/customer/comment/view.phtml"/>
+        </reference>
+    </febin_employee_blog_customer_comment_view>
+</layout>

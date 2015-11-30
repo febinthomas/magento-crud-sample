@@ -1,0 +1,162 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Febin_Employee extension
+ * 
+ * NOTICE OF LICENSE
+ * 
+ * This source file is subject to the MIT License
+ * that is bundled with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://opensource.org/licenses/mit-license.php
+ * 
+ * @category       Febin
+ * @package        Febin_Employee
+ * @copyright      Copyright (c) 2015
+ * @license        http://opensource.org/licenses/mit-license.php MIT License
+ */
+-->
+<config>
+    <modules>
+        <Febin_Employee>
+            <version>1.0.0</version>
+        </Febin_Employee>
+    </modules>
+    <global>
+        <resources>
+            <febin_employee_setup>
+                <setup>
+                    <module>Febin_Employee</module>
+                    <class>Febin_Employee_Model_Resource_Setup</class>
+                </setup>
+            </febin_employee_setup>
+        </resources>
+        <blocks>
+            <febin_employee>
+                <class>Febin_Employee_Block</class>
+            </febin_employee>
+        </blocks>
+        <helpers>
+            <febin_employee>
+                <class>Febin_Employee_Helper</class>
+            </febin_employee>
+        </helpers>
+        <models>
+            <febin_employee>
+                <class>Febin_Employee_Model</class>
+                <resourceModel>febin_employee_resource</resourceModel>
+            </febin_employee>
+            <febin_employee_resource>
+                <class>Febin_Employee_Model_Resource</class>
+                <entities>
+                    <employee>
+                        <table>febin_employee_employee</table>
+                    </employee>
+                    <blog>
+                        <table>febin_employee_blog</table>
+                    </blog>
+                    <blog_store>
+                        <table>febin_employee_blog_store</table>
+                    </blog_store>
+                    <blog_comment>
+                        <table>febin_employee_blog_comment</table>
+                    </blog_comment>
+                    <blog_comment_store>
+                        <table>febin_employee_blog_comment_store</table>
+                    </blog_comment_store>
+                    <eav_attribute>
+                        <table>febin_employee_eav_attribute</table>
+                    </eav_attribute>
+                </entities>
+            </febin_employee_resource>
+        </models>
+        <events>
+            <controller_front_init_routers>
+                <observers>
+                    <febin_employee>
+                        <class>Febin_Employee_Controller_Router</class>
+                        <method>initControllerRouters</method>
+                    </febin_employee>
+                </observers>
+            </controller_front_init_routers>
+        </events>
+    </global>
+    <adminhtml>
+        <layout>
+            <updates>
+                <febin_employee>
+                    <file>febin_employee.xml</file>
+                </febin_employee>
+            </updates>
+        </layout>
+        <translate>
+            <modules>
+                <Febin_Employee>
+                    <files>
+                        <default>Febin_Employee.csv</default>
+                    </files>
+                </Febin_Employee>
+            </modules>
+        </translate>
+        <global_search>
+            <employee>
+                <class>febin_employee/adminhtml_search_employee</class>
+                <acl>febin_employee</acl>
+            </employee>
+            <blog>
+                <class>febin_employee/adminhtml_search_blog</class>
+                <acl>febin_employee</acl>
+            </blog>
+        </global_search>
+    </adminhtml>
+    <admin>
+        <routers>
+            <adminhtml>
+                <args>
+                    <modules>
+                        <Febin_Employee before="Mage_Adminhtml">Febin_Employee_Adminhtml</Febin_Employee>
+                    </modules>
+                </args>
+            </adminhtml>
+        </routers>
+    </admin>
+    <frontend>
+        <routers>
+            <febin_employee>
+                <use>standard</use>
+                <args>
+                    <module>Febin_Employee</module>
+                    <frontName>febin_employee</frontName>
+                </args>
+            </febin_employee>
+        </routers>
+        <layout>
+            <updates>
+                <febin_employee>
+                    <file>febin_employee.xml</file>
+                </febin_employee>
+            </updates>
+        </layout>
+        <translate>
+            <modules>
+                <Febin_Employee>
+                    <files>
+                        <default>Febin_Employee.csv</default>
+                    </files>
+                </Febin_Employee>
+            </modules>
+        </translate>
+    </frontend>
+    <default>
+        <febin_employee>
+            <employee>
+                <breadcrumbs>1</breadcrumbs>
+            </employee>
+            <blog>
+                <breadcrumbs>1</breadcrumbs>
+                <allow_comment>1</allow_comment>
+                <meta_title>blog</meta_title>
+            </blog>
+        </febin_employee>
+    </default>
+</config>

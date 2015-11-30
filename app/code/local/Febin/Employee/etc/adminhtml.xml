@@ -1,0 +1,88 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Febin_Employee extension
+ * 
+ * NOTICE OF LICENSE
+ * 
+ * This source file is subject to the MIT License
+ * that is bundled with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://opensource.org/licenses/mit-license.php
+ * 
+ * @category       Febin
+ * @package        Febin_Employee
+ * @copyright      Copyright (c) 2015
+ * @license        http://opensource.org/licenses/mit-license.php MIT License
+ */
+-->
+<config>
+    <acl>
+        <resources>
+            <admin>
+                <children>
+                    <system>
+                        <children>
+                            <config>
+                                <children>
+                                    <febin_employee translate="title" module="febin_employee">
+                                        <title>Employee</title>
+                                    </febin_employee>
+                                </children>
+                            </config>
+                        </children>
+                    </system>
+                    <febin_employee translate="title" module="febin_employee">
+                        <title>Febin</title>
+                        <children>
+                            <employee translate="title" module="febin_employee">
+                                <title>Employee</title>
+                                <sort_order>0</sort_order>
+                            </employee>
+                            <employee_attributes translate="title" module="febin_employee">
+                                <title>Manage Employee attributes</title>
+                                <sort_order>7</sort_order>
+                            </employee_attributes>
+                            <blog translate="title" module="febin_employee">
+                                <title>Blog</title>
+                                <sort_order>10</sort_order>
+                            </blog>
+                            <blog_comments translate="title" module="febin_employee">
+                                <title>Manage Blog Comments</title>
+                                <sort_order>15</sort_order>
+                            </blog_comments>
+                        </children>
+                    </febin_employee>
+                </children>
+            </admin>
+        </resources>
+    </acl>
+    <menu>
+        <febin_employee translate="title" module="febin_employee">
+            <title>Febin</title>
+            <sort_order>85</sort_order>
+            <children>
+                <employee translate="title" module="febin_employee">
+                    <title>Employee</title>
+                    <action>adminhtml/employee_employee</action>
+                    <sort_order>0</sort_order>
+                </employee>
+                <employee_attributes translate="title" module="febin_employee">
+                    <title>Manage Employee Attributes</title>
+                    <action>adminhtml/employee_employee_attribute</action>
+                    <sort_order>7</sort_order>
+                </employee_attributes>
+                <blog translate="title" module="febin_employee">
+                    <title>Blog</title>
+                    <action>adminhtml/employee_blog</action>
+                    <sort_order>10</sort_order>
+                </blog>
+                <blog_comments translate="title" module="febin_employee">
+                    <title>Manage Blog Comments</title>
+                    <action>adminhtml/employee_blog_comment</action>
+                    <sort_order>14</sort_order>
+                </blog_comments>
+            </children>
+        </febin_employee>
+    </menu>
+</config>

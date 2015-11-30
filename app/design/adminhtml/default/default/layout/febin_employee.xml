@@ -1,0 +1,142 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Febin_Employee extension
+ * 
+ * NOTICE OF LICENSE
+ * 
+ * This source file is subject to the MIT License
+ * that is bundled with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://opensource.org/licenses/mit-license.php
+ * 
+ * @category       Febin
+ * @package        Febin_Employee
+ * @copyright      Copyright (c) 2015
+ * @license        http://opensource.org/licenses/mit-license.php MIT License
+ */
+--> 
+<layout>
+    <adminhtml_employee_employee_index>
+        <reference name="menu">
+            <action method="setActive">
+                <menupath>febin_employee/employee</menupath>
+            </action>
+        </reference>
+        <reference name="content">
+            <block type="febin_employee/adminhtml_employee" name="employee">
+                <block type="adminhtml/store_switcher" name="store_switcher" as="store_switcher">
+                    <action method="setUseConfirm"><params>0</params></action>
+                </block>
+            </block>
+
+        </reference>
+    </adminhtml_employee_employee_index>
+    <adminhtml_employee_employee_grid>
+        <block type="core/text_list" name="root" output="toHtml">
+            <block type="febin_employee/adminhtml_employee_grid" name="employee_grid"/>
+        </block>
+    </adminhtml_employee_employee_grid>
+    <!-- Employee add/edit action -->
+    <adminhtml_employee_employee_edit>
+        <update handle="editor"/>
+        <reference name="menu">
+            <action method="setActive">
+                <menupath>febin_employee/employee</menupath>
+            </action>
+        </reference>
+        <reference name="content">
+            <block type="febin_employee/adminhtml_employee_edit" name="employee_edit"></block>
+        </reference>
+        <reference name="left">
+            <block type="adminhtml/store_switcher" name="store_switcher" before="-"></block>
+            <block type="febin_employee/adminhtml_employee_edit_tabs" name="employee_tabs"></block>
+        </reference>
+        <reference name="head">
+            <action method="setCanLoadTinyMce"><load>1</load></action>
+        </reference>
+        <reference name="js">
+            <block type="core/template" name="catalog.wysiwyg.js" template="catalog/wysiwyg/js.phtml"/>
+        </reference>
+    </adminhtml_employee_employee_edit>
+
+    <adminhtml_employee_blog_index>
+        <reference name="menu">
+            <action method="setActive">
+                <menupath>febin_employee/blog</menupath>
+            </action>
+        </reference>
+        <reference name="content">
+            <block type="febin_employee/adminhtml_blog" name="blog" />
+
+        </reference>
+    </adminhtml_employee_blog_index>
+    <adminhtml_employee_blog_grid>
+        <block type="core/text_list" name="root" output="toHtml">
+            <block type="febin_employee/adminhtml_blog_grid" name="blog_grid"/>
+        </block>
+    </adminhtml_employee_blog_grid>
+    <!-- Blog add/edit action -->
+    <adminhtml_employee_blog_edit>
+        <update handle="editor"/>
+        <reference name="menu">
+            <action method="setActive">
+                <menupath>febin_employee/blog</menupath>
+            </action>
+        </reference>
+        <reference name="content">
+            <block type="febin_employee/adminhtml_blog_edit" name="blog_edit"></block>
+        </reference>
+        <reference name="left">
+            <block type="febin_employee/adminhtml_blog_edit_tabs" name="blog_tabs"></block>
+        </reference>
+    </adminhtml_employee_blog_edit>
+
+    <adminhtml_employee_employee_attribute_index>
+        <reference name="content">
+            <block type="febin_employee/adminhtml_employee_attribute" name="attribute_grid"></block>
+        </reference>
+    </adminhtml_employee_employee_attribute_index>
+    <adminhtml_employee_employee_attribute_edit>
+        <reference name="left">
+            <block type="febin_employee/adminhtml_employee_attribute_edit_tabs" name="attribute_edit_tabs"></block>
+        </reference>
+        <reference name="content">
+            <block type="febin_employee/adminhtml_employee_attribute_edit" name="attribute_edit_content"></block>
+        </reference>
+        <reference name="js">
+            <block type="adminhtml/template" name="attribute_edit_js" template="febin_employee/attribute/js.phtml">
+                <action method="setMainEntityName"><name>employee</name></action>
+            </block>
+        </reference>
+    </adminhtml_employee_employee_attribute_edit>
+    <adminhtml_employee_blog_comment_index>
+        <reference name="menu">
+            <action method="setActive">
+                <menupath>febin_employee/blog_comment</menupath>
+            </action>
+        </reference>
+        <reference name="content">
+            <block type="febin_employee/adminhtml_blog_comment" name="blog_comment_grid"/>
+        </reference>
+    </adminhtml_employee_blog_comment_index>
+    <adminhtml_employee_blog_comment_grid>
+        <block type="core/text_list" name="root" output="toHtml">
+            <block type="febin_employee/adminhtml_blog_comment_grid" name="blog_comment_grid"/>
+        </block>
+    </adminhtml_employee_blog_comment_grid>
+    <adminhtml_employee_blog_comment_edit>
+        <update handle="editor"/>
+        <reference name="menu">
+            <action method="setActive">
+                <menupath>febin_employee/blog_comment</menupath>
+            </action>
+        </reference>
+        <reference name="content">
+            <block type="febin_employee/adminhtml_blog_comment_edit" name="blog_comment_edit"></block>
+        </reference>
+        <reference name="left">
+            <block type="febin_employee/adminhtml_blog_comment_edit_tabs" name="blog_comment_tabs"></block>
+        </reference>
+    </adminhtml_employee_blog_comment_edit>
+</layout>
