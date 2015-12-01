@@ -60,38 +60,6 @@
         </reference>
     </adminhtml_employee_employee_edit>
 
-    <adminhtml_employee_blog_index>
-        <reference name="menu">
-            <action method="setActive">
-                <menupath>febin_employee/blog</menupath>
-            </action>
-        </reference>
-        <reference name="content">
-            <block type="febin_employee/adminhtml_blog" name="blog" />
-
-        </reference>
-    </adminhtml_employee_blog_index>
-    <adminhtml_employee_blog_grid>
-        <block type="core/text_list" name="root" output="toHtml">
-            <block type="febin_employee/adminhtml_blog_grid" name="blog_grid"/>
-        </block>
-    </adminhtml_employee_blog_grid>
-    <!-- Blog add/edit action -->
-    <adminhtml_employee_blog_edit>
-        <update handle="editor"/>
-        <reference name="menu">
-            <action method="setActive">
-                <menupath>febin_employee/blog</menupath>
-            </action>
-        </reference>
-        <reference name="content">
-            <block type="febin_employee/adminhtml_blog_edit" name="blog_edit"></block>
-        </reference>
-        <reference name="left">
-            <block type="febin_employee/adminhtml_blog_edit_tabs" name="blog_tabs"></block>
-        </reference>
-    </adminhtml_employee_blog_edit>
-
     <adminhtml_employee_employee_attribute_index>
         <reference name="content">
             <block type="febin_employee/adminhtml_employee_attribute" name="attribute_grid"></block>
@@ -110,33 +78,4 @@
             </block>
         </reference>
     </adminhtml_employee_employee_attribute_edit>
-    <adminhtml_employee_blog_comment_index>
-        <reference name="menu">
-            <action method="setActive">
-                <menupath>febin_employee/blog_comment</menupath>
-            </action>
-        </reference>
-        <reference name="content">
-            <block type="febin_employee/adminhtml_blog_comment" name="blog_comment_grid"/>
-        </reference>
-    </adminhtml_employee_blog_comment_index>
-    <adminhtml_employee_blog_comment_grid>
-        <block type="core/text_list" name="root" output="toHtml">
-            <block type="febin_employee/adminhtml_blog_comment_grid" name="blog_comment_grid"/>
-        </block>
-    </adminhtml_employee_blog_comment_grid>
-    <adminhtml_employee_blog_comment_edit>
-        <update handle="editor"/>
-        <reference name="menu">
-            <action method="setActive">
-                <menupath>febin_employee/blog_comment</menupath>
-            </action>
-        </reference>
-        <reference name="content">
-            <block type="febin_employee/adminhtml_blog_comment_edit" name="blog_comment_edit"></block>
-        </reference>
-        <reference name="left">
-            <block type="febin_employee/adminhtml_blog_comment_edit_tabs" name="blog_comment_tabs"></block>
-        </reference>
-    </adminhtml_employee_blog_comment_edit>
 </layout>

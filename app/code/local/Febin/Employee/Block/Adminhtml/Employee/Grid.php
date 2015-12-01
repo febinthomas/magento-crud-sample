@@ -52,6 +52,7 @@ class Febin_Employee_Block_Adminhtml_Employee_Grid extends Mage_Adminhtml_Block_
             ->getCollection()
             ->addAttributeToSelect('employee_middlename')
             ->addAttributeToSelect('employee_surname')
+            ->addAttributeToSelect('employee_email')
             ->addAttributeToSelect('employee_dob')
             ->addAttributeToSelect('status');
         
@@ -143,6 +144,15 @@ class Febin_Employee_Block_Adminhtml_Employee_Grid extends Mage_Adminhtml_Block_
             array(
                 'header' => Mage::helper('febin_employee')->__('SurName'),
                 'index'  => 'employee_surname',
+                'type'=> 'text',
+
+            )
+        );
+        $this->addColumn(
+            'employee_email',
+            array(
+                'header' => Mage::helper('febin_employee')->__('Email'),
+                'index'  => 'employee_email',
                 'type'=> 'text',
 
             )

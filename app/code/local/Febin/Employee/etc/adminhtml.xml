@@ -43,14 +43,6 @@
                                 <title>Manage Employee attributes</title>
                                 <sort_order>7</sort_order>
                             </employee_attributes>
-                            <blog translate="title" module="febin_employee">
-                                <title>Blog</title>
-                                <sort_order>10</sort_order>
-                            </blog>
-                            <blog_comments translate="title" module="febin_employee">
-                                <title>Manage Blog Comments</title>
-                                <sort_order>15</sort_order>
-                            </blog_comments>
                         </children>
                     </febin_employee>
                 </children>
@@ -72,16 +64,6 @@
                     <action>adminhtml/employee_employee_attribute</action>
                     <sort_order>7</sort_order>
                 </employee_attributes>
-                <blog translate="title" module="febin_employee">
-                    <title>Blog</title>
-                    <action>adminhtml/employee_blog</action>
-                    <sort_order>10</sort_order>
-                </blog>
-                <blog_comments translate="title" module="febin_employee">
-                    <title>Manage Blog Comments</title>
-                    <action>adminhtml/employee_blog_comment</action>
-                    <sort_order>14</sort_order>
-                </blog_comments>
             </children>
         </febin_employee>
     </menu>

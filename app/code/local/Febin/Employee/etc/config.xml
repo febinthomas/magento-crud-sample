@@ -52,34 +52,12 @@
                     <employee>
                         <table>febin_employee_employee</table>
                     </employee>
-                    <blog>
-                        <table>febin_employee_blog</table>
-                    </blog>
-                    <blog_store>
-                        <table>febin_employee_blog_store</table>
-                    </blog_store>
-                    <blog_comment>
-                        <table>febin_employee_blog_comment</table>
-                    </blog_comment>
-                    <blog_comment_store>
-                        <table>febin_employee_blog_comment_store</table>
-                    </blog_comment_store>
                     <eav_attribute>
                         <table>febin_employee_eav_attribute</table>
                     </eav_attribute>
                 </entities>
             </febin_employee_resource>
         </models>
-        <events>
-            <controller_front_init_routers>
-                <observers>
-                    <febin_employee>
-                        <class>Febin_Employee_Controller_Router</class>
-                        <method>initControllerRouters</method>
-                    </febin_employee>
-                </observers>
-            </controller_front_init_routers>
-        </events>
     </global>
     <adminhtml>
         <layout>
@@ -103,10 +81,6 @@
                 <class>febin_employee/adminhtml_search_employee</class>
                 <acl>febin_employee</acl>
             </employee>
-            <blog>
-                <class>febin_employee/adminhtml_search_blog</class>
-                <acl>febin_employee</acl>
-            </blog>
         </global_search>
     </adminhtml>
     <admin>
@@ -152,11 +126,6 @@
             <employee>
                 <breadcrumbs>1</breadcrumbs>
             </employee>
-            <blog>
-                <breadcrumbs>1</breadcrumbs>
-                <allow_comment>1</allow_comment>
-                <meta_title>blog</meta_title>
-            </blog>
         </febin_employee>
     </default>
 </config>
